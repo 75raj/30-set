@@ -1,0 +1,719 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bihar Board Complete Test Sets</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f4f7fc;
+  color:#17233c;
+  line-height:1.6;
+}
+
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+header{
+  background:#101d38;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px #0002;
+}
+
+.nav{
+  min-height:65px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  color:#ffc857;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{color:#ffc857;}
+
+.hero{
+  background:linear-gradient(135deg,#101d38,#174d86);
+  color:white;
+  padding:65px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:clamp(25px,4vw,39px);
+  line-height:1.25;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:750px;
+  margin:10px auto;
+  color:#e3eaf5;
+  font-size:16px;
+}
+
+.badge{
+  display:inline-block;
+  background:#ffc857;
+  color:#17233c;
+  padding:7px 16px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.section{
+  padding:48px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:27px;
+  margin-bottom:10px;
+  color:#14294b;
+}
+
+.section-sub{
+  text-align:center;
+  color:#66748b;
+  margin-bottom:28px;
+  font-size:14px;
+}
+
+.subject-grid,
+.feature-grid,
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:13px;
+  box-shadow:0 4px 18px #14294b12;
+  border:1px solid #e7edf5;
+}
+
+.card h3{
+  font-size:18px;
+  margin-bottom:12px;
+  color:#174d86;
+}
+
+.subject-list{
+  list-style:none;
+}
+
+.subject-list li{
+  padding:7px 0;
+  border-bottom:1px solid #edf0f5;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.subject-list li:last-child{border:0;}
+
+.count{
+  color:#174d86;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.info-box{
+  background:#eaf2ff;
+  border-left:4px solid #2875c7;
+  padding:17px;
+  border-radius:8px;
+  margin-top:20px;
+  font-size:14px;
+}
+
+.feature-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.feature{
+  background:white;
+  padding:17px;
+  border-radius:12px;
+  border:1px solid #e7edf5;
+}
+
+.feature h3{
+  font-size:16px;
+  margin-bottom:6px;
+  color:#174d86;
+}
+
+.feature p{
+  font-size:14px;
+  color:#66748b;
+}
+
+.demo{
+  background:#fff8e8;
+  border:1px solid #ffe1a0;
+  border-radius:15px;
+  padding:28px 18px;
+  text-align:center;
+}
+
+.demo h2{
+  color:#17233c;
+  margin-bottom:8px;
+}
+
+.demo p{
+  color:#66748b;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.demo-btn{
+  display:inline-block;
+  background:#e49a16;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:.55;transform:scale(.98);}
+}
+
+.package-grid{
+  grid-template-columns:repeat(3,1fr);
+  align-items:stretch;
+}
+
+.package{
+  background:white;
+  border-radius:14px;
+  padding:20px 16px;
+  border:1px solid #e1e8f2;
+  box-shadow:0 5px 18px #14294b12;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+}
+
+.package.popular{
+  border:2px solid #e8a52a;
+  position:relative;
+}
+
+.package h3{
+  font-size:18px;
+  color:#174d86;
+}
+
+.price{
+  font-size:29px;
+  font-weight:800;
+  color:#14294b;
+  margin:8px 0 14px;
+}
+
+.price small{
+  font-size:13px;
+  color:#7b8799;
+  text-decoration:line-through;
+}
+
+.package p{
+  font-size:13px;
+  color:#66748b;
+  margin-bottom:15px;
+}
+
+.package ul{
+  list-style:none;
+  text-align:left;
+  margin-bottom:18px;
+  flex:1;
+}
+
+.package li{
+  font-size:13px;
+  padding:5px 0;
+  border-bottom:1px solid #edf0f5;
+}
+
+.btn{
+  display:block;
+  text-decoration:none;
+  padding:11px 10px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:bold;
+  margin-top:9px;
+}
+
+.buy{
+  background:#174d86;
+  color:white;
+}
+
+.whatsapp{
+  background:#159b58;
+  color:white;
+}
+
+.btn:hover{opacity:.88;}
+
+.faq{
+  background:white;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:10px;
+  border:1px solid #e7edf5;
+}
+
+.faq h3{
+  font-size:15px;
+  color:#174d86;
+  margin-bottom:5px;
+}
+
+.faq p{
+  font-size:14px;
+  color:#66748b;
+}
+
+.contact{
+  background:#101d38;
+  color:white;
+  padding:35px 15px;
+  text-align:center;
+}
+
+.contact h2{margin-bottom:8px;}
+
+.contact p{
+  color:#d6dfed;
+  font-size:14px;
+}
+
+footer{
+  background:#0b1529;
+  color:#b9c5d8;
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+}
+
+/* Tablet */
+@media(max-width:800px){
+  .subject-grid,.package-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .container{width:92%;}
+
+  .nav{
+    min-height:58px;
+    flex-direction:column;
+    padding:10px 0;
+    gap:7px;
+  }
+
+  .logo{font-size:18px;}
+
+  nav{
+    width:100%;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+  }
+
+  nav a{font-size:12px;}
+
+  .hero{padding:42px 15px;}
+
+  .hero h1{font-size:25px;}
+
+  .hero p{font-size:14px;}
+
+  .section{padding:34px 0;}
+
+  .section-title{font-size:23px;}
+
+  .section-sub{font-size:13px;margin-bottom:20px;}
+
+  .subject-grid,
+  .feature-grid,
+  .package-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .card{padding:16px;}
+
+  .feature{padding:14px;}
+
+  .package{
+    padding:17px;
+    max-width:420px;
+    width:100%;
+    margin:auto;
+  }
+
+  .price{font-size:27px;}
+
+  .demo{padding:22px 14px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">📚 Study Material</div>
+    <nav>
+      <a href="#subjects">Subjects</a>
+      <a href="#material">Material</a>
+      <a href="#demo">Demo</a>
+      <a href="#packages">Packages</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">BIHAR BOARD • CLASS 10TH + 12TH</span>
+
+    <h1>Complete Practice Test Set Bundle</h1>
+
+    <p>
+      अब Class 10th और Class 12th दोनों का Complete Practice Test Set Bundle
+      एक ही जगह प्राप्त करें!
+    </p>
+
+    <p>
+      इस Combo Bundle में Bihar Board Class 10th और Class 12th के
+      प्रमुख विषयों के 30-30 Practice Test Sets मिलेंगे।
+    </p>
+  </div>
+</section>
+
+<section class="section" id="subjects">
+  <div class="container">
+    <h2 class="section-title">📖 Available Subjects</h2>
+    <p class="section-sub">हर विषय के लिए अलग-अलग 30 Practice Test Sets</p>
+
+    <div class="subject-grid">
+
+      <div class="card">
+        <h3>Class 10th</h3>
+        <ul class="subject-list">
+          <li>Hindi <span class="count">30 Sets</span></li>
+          <li>English <span class="count">30 Sets</span></li>
+          <li>Science <span class="count">30 Sets</span></li>
+          <li>Mathematics <span class="count">30 Sets</span></li>
+          <li>Social Science <span class="count">30 Sets</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Class 12th</h3>
+        <ul class="subject-list">
+          <li>Physics <span class="count">30 Sets</span></li>
+          <li>Chemistry <span class="count">30 Sets</span></li>
+          <li>Biology <span class="count">30 Sets</span></li>
+          <li>Mathematics <span class="count">30 Sets</span></li>
+          <li>Hindi <span class="count">30 Sets</span></li>
+          <li>English <span class="count">30 Sets</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Complete Combo</h3>
+        <p style="font-size:14px;color:#66748b;">
+          Class 10th और Class 12th दोनों के सभी उपलब्ध विषयों के
+          Practice Test Sets एक ही Bundle में।
+        </p>
+        <div class="info-box">
+          सभी विषयों में 30-30 Sets शामिल हैं।
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="material" style="background:#edf3fa;">
+  <div class="container">
+    <h2 class="section-title">📦 हर Test Set में क्या मिलेगा?</h2>
+    <p class="section-sub">Practice और preparation के लिए जरूरी सामग्री</p>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <h3>✅ Objective Questions</h3>
+        <p>प्रत्येक सेट के लिए Objective Questions (MCQs)।</p>
+      </div>
+
+      <div class="feature">
+        <h3>✅ Objective Answer Key</h3>
+        <p>Objective Questions के सही उत्तर।</p>
+      </div>
+
+      <div class="feature">
+        <h3>✅ Subjective Questions</h3>
+        <p>Short और Long Answer Questions।</p>
+      </div>
+
+      <div class="feature">
+        <h3>✅ Subjective Answers</h3>
+        <p>Subjective Questions के उत्तर और Solutions।</p>
+      </div>
+
+      <div class="feature">
+        <h3>📄 PDF Files</h3>
+        <p>अध्ययन और प्रिंटिंग के लिए PDF Format।</p>
+      </div>
+
+      <div class="feature">
+        <h3>✏️ Editable Files</h3>
+        <p>उपलब्ध Editable Files को अपनी जरूरत के अनुसार Customize करें।</p>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <strong>किसके लिए उपयोगी?</strong><br>
+      School Teachers, Coaching Institutes, Private Tutors,
+      Educational Content Creators और Students।
+    </div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="container">
+    <div class="demo">
+      <h2>🎯 पहले Demo देखें</h2>
+      <p>
+        खरीदने से पहले Google Drive पर उपलब्ध Demo Files देखें।
+      </p>
+
+      <a class="demo-btn"
+         href="https://drive.google.com/drive/folders/1Ve9hR-Vm_-8Zo5zW0yzSo_vZZcU75P4J?usp=sharing"
+         target="_blank" rel="noopener">
+        👇 CLICK HERE – YAHAN CLICK KAREIN
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">⭐ Why Choose This Bundle?</h2>
+    <p class="section-sub">एक ही जगह दोनों Classes की Practice Material</p>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>📚 Complete Coverage</h3>
+        <p>Class 10th और 12th के प्रमुख विषयों के Test Sets।</p>
+      </div>
+
+      <div class="feature">
+        <h3>📝 Questions + Answers</h3>
+        <p>Objective और Subjective दोनों प्रकार की सामग्री।</p>
+      </div>
+
+      <div class="feature">
+        <h3>👨‍🏫 Teachers & Coaching</h3>
+        <p>Teaching और practice activities में उपयोगी।</p>
+      </div>
+
+      <div class="feature">
+        <h3>📱 Digital Access</h3>
+        <p>डिजिटल फाइलों को आसानी से Access करें।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packages" style="background:#edf3fa;">
+  <div class="container">
+    <h2 class="section-title">🛒 Choose Your Package</h2>
+    <p class="section-sub">अपनी जरूरत के अनुसार Package चुनें</p>
+
+    <div class="package-grid">
+
+      <!-- CLASS 10 -->
+      <div class="package">
+        <h3>Class 10th</h3>
+        <div class="price">₹99</div>
+        <p>Class 10th Complete Test Set Bundle</p>
+
+        <ul>
+          <li>✓ 5 Subjects</li>
+          <li>✓ 30 Sets Per Subject</li>
+          <li>✓ Objective Questions & Answers</li>
+          <li>✓ Subjective Questions & Answers</li>
+          <li>✓ PDF Files</li>
+        </ul>
+
+        <a class="btn buy"
+           href="https://superprofile.bio/vp/class-10th-30-set-each-subjects"
+           target="_blank" rel="noopener">Direct Buy</a>
+
+        <a class="btn whatsapp"
+           href="https://wa.me/918969884164?text=Hello%2C%20I%20want%20to%20buy%20Class%2010th%20Test%20Set%20Bundle."
+           target="_blank" rel="noopener">WhatsApp Se Order Karein</a>
+      </div>
+
+      <!-- CLASS 12 -->
+      <div class="package">
+        <h3>Class 12th</h3>
+        <div class="price">₹99</div>
+        <p>Class 12th Complete Test Set Bundle</p>
+
+        <ul>
+          <li>✓ 6 Subjects</li>
+          <li>✓ 30 Sets Per Subject</li>
+          <li>✓ Objective Questions & Answers</li>
+          <li>✓ Subjective Questions & Answers</li>
+          <li>✓ PDF Files</li>
+        </ul>
+
+        <a class="btn buy"
+           href="https://superprofile.bio/vp/5Kh9wNJs"
+           target="_blank" rel="noopener">Direct Buy</a>
+
+        <a class="btn whatsapp"
+           href="https://wa.me/918969884164?text=Hello%2C%20I%20want%20to%20buy%20Class%2012th%20Test%20Set%20Bundle."
+           target="_blank" rel="noopener">WhatsApp Se Order Karein</a>
+      </div>
+
+      <!-- COMBO -->
+      <div class="package popular">
+        <span class="badge">BEST VALUE</span>
+        <h3>Class 10th + 12th</h3>
+        <div class="price">₹149 <small>₹198</small></div>
+        <p>Complete Combo Test Set Bundle</p>
+
+        <ul>
+          <li>✓ Class 10th + Class 12th</li>
+          <li>✓ All Included Subjects</li>
+          <li>✓ 30 Sets Per Subject</li>
+          <li>✓ Objective & Subjective Answers</li>
+          <li>✓ PDF Files</li>
+        </ul>
+
+        <a class="btn buy"
+           href="https://superprofile.bio/vp/N2hGcVrH"
+           target="_blank" rel="noopener">Direct Buy</a>
+
+        <a class="btn whatsapp"
+           href="https://wa.me/918969884164?text=Hello%2C%20I%20want%20to%20buy%20Class%2010th%20%2B%2012th%20Combo%20Bundle."
+           target="_blank" rel="noopener">WhatsApp Se Order Karein</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">❓ Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <h3>1. क्या हर विषय के 30 Sets मिलेंगे?</h3>
+      <p>हाँ, सूची में दिए गए प्रत्येक विषय के 30 Practice Test Sets मिलेंगे।</p>
+    </div>
+
+    <div class="faq">
+      <h3>2. क्या Answers भी मिलेंगे?</h3>
+      <p>हाँ, Objective और Subjective दोनों के Answers शामिल हैं।</p>
+    </div>
+
+    <div class="faq">
+      <h3>3. Demo कहाँ देख सकते हैं?</h3>
+      <p>ऊपर दिए गए Demo Button से Google Drive पर Demo Files देख सकते हैं।</p>
+    </div>
+
+    <div class="faq">
+      <h3>4. Order कैसे करें?</h3>
+      <p>Direct Buy Button या WhatsApp Order Button का उपयोग करें।</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <h2>Need Help?</h2>
+    <p>किसी भी जानकारी या Order सहायता के लिए WhatsApp करें।</p>
+
+    <a class="btn whatsapp"
+       style="display:inline-block;margin-top:15px;padding:12px 25px;"
+       href="https://wa.me/918969884164"
+       target="_blank" rel="noopener">
+      Contact on WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Bihar Board Complete Study Material. All Rights Reserved.
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',function(e){
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+```
